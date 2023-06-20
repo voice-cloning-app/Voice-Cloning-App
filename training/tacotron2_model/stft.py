@@ -34,7 +34,6 @@ import numpy as np
 import torch.nn.functional as F
 from torch.autograd import Variable
 from scipy.signal import get_window
-from librosa.util import pad_center, tiny
 from librosa.filters import mel as librosa_mel_fn
 from training.tacotron2_model.audio_processing import (
     window_sumsquare,
@@ -66,7 +65,7 @@ class STFT(torch.nn.Module):
             assert filter_length >= win_length
             # get window and zero center pad it to filter_length
             fft_window = get_window(window, win_length, fftbins=True)
-            fft_window = pad_center(fft_window, filter_length)
+            fft_window = np.pad(fft_window, (int((filter_length - len(fft_window)) / 2), filter_length - len(fft_window) - int((filter_length - len(fft_window)) / 2)), mode='constant')
             fft_window = torch.from_numpy(fft_window).float()
 
             # window the bases
