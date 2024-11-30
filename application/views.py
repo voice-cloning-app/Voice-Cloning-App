@@ -21,7 +21,7 @@ from dataset.create_dataset import create_dataset
 from dataset.utils import add_suffix
 from dataset.extend_existing_dataset import extend_existing_dataset
 from dataset.analysis import get_total_audio_duration, validate_dataset, update_dataset_info
-from dataset.transcribe import Silero, DeepSpeech, SILERO_LANGUAGES
+from dataset.transcribe import Silero, SILERO_LANGUAGES
 from training import TRAIN_FILE, VALIDATION_FILE
 from training.train import train, TRAINING_PATH, DEFAULT_ALPHABET
 from training.utils import (
@@ -124,7 +124,7 @@ def create_dataset_post():
     transcription_model = (
         Silero(language)
         if language in SILERO_LANGUAGES
-        else DeepSpeech(os.path.join(paths["languages"], language, TRANSCRIPTION_MODEL))
+        else None
     )
     symbols = get_symbols(language)
     text_file = SUBTITLE_FILE if request.files["text_file"].filename.endswith(".srt") else TEXT_FILE
