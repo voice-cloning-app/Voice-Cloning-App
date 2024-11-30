@@ -1,8 +1,8 @@
-FROM pytorch/pytorch:1.9.0-cuda11.1-cudnn8-runtime
+FROM pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime
 
 # Lib dependencies
 RUN apt-get update
-RUN apt-get install -y ffmpeg build-essential
+RUN apt-get install -y ffmpeg build-essential htop
 
 # Setup
 WORKDIR /app
