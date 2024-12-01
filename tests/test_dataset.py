@@ -345,7 +345,7 @@ def test_update_dataset_info():
 
 
 # Transcription
-#def test_deepspeech():
+# def test_deepspeech():
 #    model_path = os.path.join("test_samples", "english.pbmm")
 #    transcription_model = DeepSpeech(model_path)
 #

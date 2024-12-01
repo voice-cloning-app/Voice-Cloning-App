@@ -29,6 +29,7 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
+
 import torch
 import numpy as np
 import torch.nn.functional as F
@@ -97,7 +98,7 @@ class STFT(torch.nn.Module):
         real_part = forward_transform[:, :cutoff, :]
         imag_part = forward_transform[:, cutoff:, :]
 
-        magnitude = torch.sqrt(real_part ** 2 + imag_part ** 2)
+        magnitude = torch.sqrt(real_part**2 + imag_part**2)
         phase = torch.autograd.Variable(torch.atan2(imag_part.data, real_part.data))
 
         return magnitude, phase
@@ -156,7 +157,9 @@ class TacotronSTFT(torch.nn.Module):
         self.n_mel_channels = n_mel_channels
         self.sampling_rate = sampling_rate
         self.stft_fn = STFT(filter_length, hop_length, win_length)
-        mel_basis = librosa_mel_fn(sr=sampling_rate, n_fft=filter_length, n_mels=n_mel_channels, fmin=mel_fmin, fmax=mel_fmax)
+        mel_basis = librosa_mel_fn(
+            sr=sampling_rate, n_fft=filter_length, n_mels=n_mel_channels, fmin=mel_fmin, fmax=mel_fmax
+        )
         mel_basis = torch.from_numpy(mel_basis).float()
         self.register_buffer("mel_basis", mel_basis)
 

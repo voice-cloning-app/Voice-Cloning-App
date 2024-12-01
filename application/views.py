@@ -121,11 +121,7 @@ def create_dataset_post():
     combine_clips = request.form.get("combine_clips") is not None
     min_length = float(request.form["min_length"])
     max_length = float(request.form["max_length"])
-    transcription_model = (
-        Silero(language)
-        if language in SILERO_LANGUAGES
-        else None
-    )
+    transcription_model = Silero(language) if language in SILERO_LANGUAGES else None
     symbols = get_symbols(language)
     text_file = SUBTITLE_FILE if request.files["text_file"].filename.endswith(".srt") else TEXT_FILE
 
