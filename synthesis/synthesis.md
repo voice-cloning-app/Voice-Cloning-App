@@ -3,8 +3,8 @@ With trained model weights we can now implement the TTS app for our generated vo
 
 ## Arguments
 - **model_path**: The path to your generated model
-- **vocoder_model_path**: The path to your vocoder model ([default hifigan model found here](https://drive.google.com/file/d/1qpgI41wNXFcH-iKq1Y42JlBC9j0je8PW/view?usp=sharing))
-- **hifigan_config_path**: The path to your hifigan config ([default higigan config found here](https://drive.google.com/file/d/1pAB2kQunkDuv6W5fcJiQ0CY8xcJKB22e/view?usp=sharing))
+- **vocoder_model_path**: The path to your vocoder model ([default hifigan model found here](https://archive.org/download/voice-cloning-app-hifigan/pretrained/UNIVERSAL_V1/g_02500000))
+- **hifigan_config_path**: The path to your hifigan config ([default hifigan config found here](https://archive.org/download/voice-cloning-app-hifigan/pretrained/UNIVERSAL_V1/config.json))
 - **text**: Text you wish to synthesize
 - **graph_output_path (optional)**: Path to save alignment graph to
 - **audio_output_path (optional)**: Path to save generated audio to
