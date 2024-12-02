@@ -9,7 +9,7 @@ Firstly we need to get an audiobook and extract it's audio & text. The two best 
 ### Audible
 Audible books are licenced by audible and need to be purchased before use. For this project you will need to look for [Kindle books with audio narration](https://www.amazon.co.uk/Kindle-Books-with-Audio-Companions/b?ie=UTF8&node=5123320031). 
 
-Once you purchase an audiobook & matching kindle book, steps for extracting it can be found in a link under the dataset step of the app or you can follow the [youtube tutorial](https://www.youtube.com/watch?v=oS5VMxbhREE). 
+Once you purchase an audiobook & matching kindle book, steps for extracting it can be found in a link under the dataset step of the app or you can follow the [video tutorial](https://archive.org/details/voice-cloning-app-yt-backup). 
 
 ### LibriVox
 Whilst LibriVox is open source, it's quality is generally less consistent. However, if you find a book with audio and text you can use it just the same as the audible method.
