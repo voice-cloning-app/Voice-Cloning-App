@@ -24,3 +24,4 @@ torchvision~=0.20
 Unidecode~=1.3
 webrtcvad~=2.0
 Werkzeug~=3.1
+python-socketio==5.5.0
