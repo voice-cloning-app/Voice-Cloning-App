@@ -6,12 +6,12 @@ Download and Run the latest executable from [Releases](https://github.com/BenAAn
 
 ### Linux
 1. Clone this repository
-2. Run `./install.sh` from the root of the repository
-3. Run `python3.6 main.py`
+2. Run `./scripts/install.sh` from the root of the repository
+3. Run `python3.11 main.py`
 
 ### Manual Install (Linux/ Windows)
 1. Clone this repository
-2. Install [Python](https://www.python.org/) (version 3.6)
+2. Install [Python](https://www.python.org/) (version 3.11)
 3. Windows only: Install Visual Studio 2019 with the following components:
     - MSVC toolset C++ 2019 v142 (x86,x64) latest
     - Visual C++ 2019 Redistributable Update
@@ -32,6 +32,6 @@ Download and Run the latest `cpuonly` executable from [Releases](https://github.
 
 ### Linux
 1. Clone this repository
-2. Install [Python](https://www.python.org/) (version 3.6)
+2. Install [Python](https://www.python.org/) (version 3.11)
 3. Run `pip install -r requirements-cpu.txt`
 4. Run `python main.py`

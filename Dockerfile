@@ -22,7 +22,7 @@ COPY synthesis/ /app/synthesis
 COPY main.py /app
 
 # For vast.ai deployments
-COPY onstart.sh /app/onstart.sh
+COPY scripts/onstart.sh /app/onstart.sh
 
 # Start app
 CMD [ "python3", "main.py" ]

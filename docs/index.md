@@ -18,8 +18,8 @@ Download the latest release from [releases](https://github.com/BenAAndrew/Voice-
 ### Linux
 
 1. Clone this repository
-2. Run `./install.sh` from the root of the repository
-3. Run `python3.6 main.py`
+2. Run `./scripts/install.sh` from the root of the repository
+3. Run `python3.11 main.py`
 
 ### Manual Install (Linux/ Windows)
 
