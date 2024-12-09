@@ -5,7 +5,6 @@ import sys
 import librosa
 import wave
 import numpy as np
-import deepspeech
 import torch
 import torchaudio  # noqa
 import soundfile  # noqa
@@ -52,32 +51,6 @@ class TranscriptionModel(ABC):
             Text transcription
         """
         pass
-
-
-class DeepSpeech(TranscriptionModel):
-    """
-    Credit: https://github.com/mozilla/DeepSpeech
-    """
-
-    def __init__(self, model_path):
-        self.model = deepspeech.Model(model_path)
-
-    def load_audio(self, path):
-        try:
-            audio = wave.open(path, "r")
-        except Exception:
-            raise Exception(f"Cannot load audio file {path}")
-
-        frames = audio.getnframes()
-        buffer = audio.readframes(frames)
-        return np.frombuffer(buffer, dtype=np.int16)
-
-    def transcribe(self, path):
-        assert os.path.isfile(path), f"{path} not found. Cannot transcribe"
-
-        data = self.load_audio(path)
-        output = self.model.stt(data)
-        return output
 
 
 class Silero(TranscriptionModel):
